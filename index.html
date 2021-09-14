@@ -414,11 +414,46 @@
             font:hover {
                 opacity: 1;
             }
+
+            .slider {
+                -webkit-appearance: none;
+                width: 100px;
+                height: 10px;
+                margin-left: 60px;
+                margin-top: 20px;
+                background: rgb(236, 236, 236);
+                outline: none;
+                opacity: 0.4;
+                -webkit-transition: 0.2s;
+                transition: opacity 0.2s;
+            }
+
+            .slider:hover {
+                opacity: 1;
+            }
+
+            .slider::-webkit-slider-thumb {
+                -webkit-appearance: none;
+                appearance: none;
+                width: 25px;
+                height: 25px;
+                background: white;
+                cursor: pointer;
+            }
+
+            .slider::-moz-range-thumb {
+                width: 25px;
+                height: 25px;
+                background: white;
+                cursor: pointer;
+            }
         </style>
     </head>
     <body>
         <font id="mtbtn" size="17" style="margin-left: 20px; cursor: pointer;" onclick="unmute()" color="white">UNMUTE</font><br />
         <font id="fsbtn" size="17" style="margin-left: 20px; cursor: pointer;" onclick="document.documentElement.requestFullscreen();" color="white">FULLSCREEN</font><br />
+        <font size="5" style="margin-left: 20px; cursor: pointer; opacity: 0.5;" color="white">ENGINE WHIR: </font><br />
+        <input type="range" min="0" max="100" value="30" class="slider" id="engine" />
 
         <iframe style="display: none;" id="player" width="10" height="10" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
@@ -475,7 +510,10 @@
 
             <div class="tailwing">
                 <div class="tailwing-panel1"></div>
-                <div class="tailwing-panel2">ekan5h</div>
+                <div class="tailwing-panel2">
+                    <|<br />
+                    <|
+                </div>
                 <div class="tailwing-panel3"></div>
             </div>
 
@@ -619,7 +657,10 @@
                 wind_right[0] = [r.top, r.left, plane.style.zIndex];
             }, 300);
 
-            document.getElementsByTagName("audio")[0].volume = 0.2;
+            document.getElementsByTagName("audio")[0].volume = 0.3;
+            document.getElementById("engine").oninput = () => {
+                document.getElementsByTagName("audio")[0].volume = document.getElementById("engine").value / 100;
+            };
             function unmute() {
                 document.getElementById("player").src = "https://www.youtube.com/embed/DWcJFNfaw9c?autoplay=1";
 
