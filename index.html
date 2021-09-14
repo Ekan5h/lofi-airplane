@@ -1,0 +1,651 @@
+<html>
+   <head>
+      <style>
+         @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+         body {
+         background : #42ddf5;
+         overflow: hidden;
+         font-family: 'VT323', monospace;
+         padding: 0px;
+         margin: 0px;
+         }
+         .cloud {
+         position: absolute;
+         display: block;
+         }
+         .cloud_panel1 {
+         display: block;
+         position: absolute;
+         left: 25px;
+         height: 30px;
+         width: 70px;
+         background: white;
+         transform: skew(45deg, -20deg);
+         }
+         .cloud_panel2 {
+         display: block;
+         position: absolute;
+         text-align: center;
+         left: 40px;
+         top: 30px;
+         height: 40px;
+         width: 70px;
+         background: #bebebe;
+         transform: skew(0deg, -20deg);
+         }
+         .cloud_panel3 {
+         display: block;
+         position: absolute;
+         left: 10px;
+         top: 27px;
+         height: 40px;
+         width: 30px;
+         background: #cccccc;
+         transform: skew(0deg, 45deg);
+         }
+         .cloud_panel4 {
+         display: block;
+         position: absolute;
+         left: -10px;
+         top: 40px;
+         height: 25px;
+         width: 40px;
+         background: white;
+         transform: skew(45deg, -20deg);
+         }
+         .cloud_panel5 {
+         display: block;
+         position: absolute;
+         left: 2px;
+         top: 65px;
+         height: 35px;
+         width: 40px;
+         background: #bfbfbf;
+         transform: skew(0deg, -20deg);
+         }
+         .cloud_panel6 {
+         display: block;
+         position: absolute;
+         left: -23px;
+         top: 59px;
+         height: 35px;
+         width: 25px;
+         background: #cccccc;
+         transform: skew(0deg, 45deg);
+         }
+         .cloud_panel7 {
+         display: block;
+         position: absolute;
+         left: 110px;
+         top: 0px;
+         height: 25px;
+         width: 40px;
+         background: #f5f5f5;
+         transform: skew(45deg, -20deg);
+         }
+         .cloud_panel8 {
+         display: block;
+         position: absolute;
+         left: 123px;
+         top: 24px;
+         height: 35px;
+         width: 40px;
+         background: #bfbfbf;
+         transform: skew(0deg, -20deg);
+         }
+         .cloud_panel9 {
+         display: block;
+         position: absolute;
+         left: 98px;
+         top: 20px;
+         height: 35px;
+         width: 25px;
+         background: #cccccc;
+         transform: skew(0deg, 45deg);
+         }
+         .cloud_panel10 {
+         display: block;
+         position: absolute;
+         left: 38px;
+         top: 10px;
+         height: 30px;
+         width: 70px;
+         background: white;
+         transform: skew(45deg, -20deg);
+         }
+         .cloud_panel11 {
+         display: block;
+         position: absolute;
+         left: 53px;
+         top: 40px;
+         height: 50px;
+         width: 70px;
+         background: #bebebe;
+         transform: skew(0deg, -20deg);
+         }
+         .cloud_panel12 {
+         display: block;
+         position: absolute;
+         left: 23px;
+         top: 37px;
+         height: 50px;
+         width: 30px;
+         background: #cccccc;
+         transform: skew(0deg, 45deg);
+         }
+
+         .plane {
+  position: absolute;
+  display: block;
+  left:calc(50% - 50px);
+  top: calc(50% - 50px);
+  transform-origin: 10px 45px;
+  /* transform:  translate(-50%, -50%); */
+}
+
+.front-panel1 {
+  display: block;
+  position: absolute;
+  left: 25px;
+  top: 1px;
+  height: 30px;
+  width: 30px;
+  border-style: none solid none none;
+  border-color: #2e2e2e;
+  border-width: 20px;
+  background: #de0000;
+  transform: skew(45deg, -20deg);
+}
+
+.front-panel2 {
+  display: block;
+  position: absolute;
+  left: 40px;
+  top: 30px;
+  height: 40px;
+  width: 30px;
+  border-style: none solid none none;
+  border-color: black;
+  border-width: 20px;
+  background: #c20000;
+  transform: skew(0deg, -20deg);
+}
+
+.front-panel3 {
+  display: block;
+  position: absolute;
+  left: 10px;
+  top: 24px;
+  height: 40px;
+  width: 30px;
+  background: #cf0000;
+  transform: skew(0deg, 45deg);
+}
+
+
+.mid-panel1 {
+  display: block;
+  position: absolute;
+  left: -25px;
+  top: 22px;
+  height: 28px;
+  width: 50px;
+  background: #de0000;
+  transform: skew(45deg, -20deg);
+}
+
+.mid-panel2 {
+  display: block;
+  position: absolute;
+  left: -11px;
+  top: 49px;
+  height: 35px;
+  width: 50px;
+  background: #bf0000;
+  transform: skew(0deg, -20deg);
+}
+
+.mid-panel3 {
+  display: block;
+  position: absolute;
+  left: -39px;
+  top: 44px;
+  height: 35px;
+  width: 28px;
+  background: #b10000;
+  transform: skew(0deg, 45deg);
+}
+
+.seat {
+  position: absolute;
+  height: 21px;
+  width: 33px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #4a0000;
+  border-radius: 50%;
+}
+
+.tail-panel1 {
+  display: block;
+  position: absolute;
+  left: -82px;
+  top: 46px;
+  height: 23px;
+  width: 60px;
+  background: #de0000;
+  transform: skew(45deg, -20deg);
+}
+
+.tail-panel2 {
+  display: block;
+  position: absolute;
+  left: -70px;
+  top: 68px;
+  height: 20px;
+  width: 60px;
+  background: #c20000;
+  transform: skew(0deg, -20deg);
+}
+
+.tail-panel3 {
+  display: block;
+  position: absolute;
+  left: -93px;
+  top: 68px;
+  height: 20px;
+  width: 23px;
+  background: #cf0000;
+  transform: skew(0deg, 45deg);
+}
+
+
+.wingleft-panel1 {
+  display: block;
+  position: absolute;
+  left: 20px;
+  top: 55px;
+  height: 60px;
+  width: 50px;
+  background: #d30000;
+  transform: skew(45deg, -20deg);
+}
+
+.wingleft-panel2 {
+  display: block;
+  position: absolute;
+  left: 50px;
+  top: 115px;
+  height: 5px;
+  width: 50px;
+  background: #c20000;
+  transform: skew(0deg, -20deg);
+}
+
+.wingleft-panel3 {
+  display: block;
+  position: absolute;
+  left: -10px;
+  top: 93px;
+  height: 5px;
+  width: 60px;
+  background: #cf0000;
+  transform: skew(0deg, 45deg);
+}
+
+.target_circle_outer {
+  position: absolute;
+  height:15px;
+  width:25px;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 7px;
+  border-color: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.target {
+  position: absolute;
+  height:5px;
+  width:12px;
+  border-radius: 50%;
+  background: white;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.wingright-panel1 {
+  display: block;
+  position: absolute;
+  left: -60px;
+  top: -30px;
+  height: 60px;
+  width: 50px;
+  background: #d30000;
+  transform: skew(45deg, -20deg);
+}
+
+.wingright-panel3 {
+  display: block;
+  position: absolute;
+  left: -90px;
+  top: 9px;
+  height: 5px;
+  width: 60px;
+  background: #cf0000;
+  transform: skew(0deg, 45deg);
+}
+
+.tailwing-panel1 {
+  display: block;
+  position: absolute;
+  left: -99px;
+  top: 28px;
+  height: 5px;
+  width: 40px;
+  background: #de0000;
+  transform: skew(45deg, -20deg);
+}
+
+.tailwing-panel2 {
+  display: block;
+  position: absolute;
+  color: white;
+  left: -97px;
+  top: 32px;
+  height: 40px;
+  width: 40px;
+  background: #c20000;
+  transform: skew(0deg, -20deg);
+}
+
+.tailwing-panel3 {
+  display: block;
+  position: absolute;
+  left: -102px;
+  top: 37px;
+  height: 40px;
+  width: 5px;
+  background: #cf0000;
+  transform: skew(0deg, 45deg);
+}
+
+.prop {
+  position: absolute;
+  height: 70px;
+  width: 10px;
+  left: 70px;
+  top: -15px;
+  background: black;
+  animation:spin 0.5s linear infinite;
+}
+
+@keyframes spin { 
+    100% { 
+        transform:skew(0deg, 45deg) rotate(360deg); 
+    } 
+}
+
+.wind {
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: white;
+    border-radius: 50%;
+}
+
+#left {
+    left: -95px;
+    top: -25px;
+}
+
+#right {
+    left: 45px;
+    top: 120px;
+}
+
+font {
+  opacity: 0.5;
+}
+
+font:hover{
+  opacity: 1;
+}
+
+      </style>
+   </head>
+   <body>
+    
+    <font id="mtbtn" size=17 style="margin-left: 20px; cursor: pointer;" onclick="unmute()" color="white">UNMUTE</font><br>
+    <font id="fsbtn" size=17 style="margin-left: 20px; cursor: pointer;" onclick="document.documentElement.requestFullscreen();" color="white">FULLSCREEN</font>
+
+    <audio controls loop style="display: none;">
+      <source src="engine.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+    <audio controls loop style="display: none;">
+      <source src="japan_sinks.mp3" type="audio/mp3">
+    </audio>
+
+    <div class='plane'>
+    
+        <div class='prop'></div>
+        
+        <div class='wingright'>
+          <div class='wingright-panel1'>
+            <div class='target_circle_outer'>
+              <div class='target'></div>
+            </div>
+          </div>
+          <div class='wingright-panel3'></div>
+        </div>
+        
+        <div class='front'>
+          <div class='front-panel1'></div>
+          <div class='front-panel2'></div>
+          <div class='front-panel3'></div>
+        </div>
+        
+        <div class='mid'>
+          <div class='mid-panel1'>
+            <div class='seat'></div>
+          </div>
+          <div class='mid-panel2'></div>
+          <div class='mid-panel3'></div>
+        </div>
+        
+        <div class='tail'>
+          <div class='tail-panel1'></div>
+          <div class='tail-panel2'></div>
+          <div class='tail-panel3'></div>
+        </div>
+        
+        <div class='wingleft'>
+          <div class='wingleft-panel1'>
+            <div class='target_circle_outer'>
+              <div class='target'></div>
+            </div>
+          </div>
+          <div class='wingleft-panel2'></div>
+          <div class='wingleft-panel3'></div>
+        </div>
+        
+        <div class='tailwing'>
+          <div class='tailwing-panel1'></div>
+          <div class='tailwing-panel2'>ekan5h</div>
+          <div class='tailwing-panel3'></div>
+        </div>
+        
+        <div class='wind' id='left'></div>
+        <div class='wind' id='right'></div>
+
+      </div>
+
+      <script>
+         function getLeft(x) {
+            return (x + 600 + document.body.offsetWidth)%(document.body.offsetWidth+400) - 200;
+         }
+         
+         function getTop(x) {
+            return (x + 600 + document.body.offsetHeight)%(document.body.offsetHeight+400) - 200;
+         }
+         
+         function createCloud(){
+            x = document.createElement('div');
+            x.className = 'cloud';
+            
+            x.style.top = ((document.body.offsetHeight+400) * Math.random() - 200 ) + "px";
+            x.style.left = ((document.body.offsetWidth + 400) * Math.random() - 200 ) + "px";
+            x.style.transform = "scale("+ (0.5 + Math.random()) + ")";
+
+            if(Math.random()>0.25){
+                for (var i = 7; i<10; i++){
+                    y = document.createElement('div');
+                    y.className = 'cloud_panel'+i;
+                    x.appendChild(y);
+                }
+            }
+         
+         if(Math.random() < 0.5) {
+            for (var i = 1; i<4; i++){
+                y = document.createElement('div');
+                y.className = 'cloud_panel'+i;
+                x.appendChild(y);
+            }
+         }else{
+            for (var i = 10; i<13; i++){
+                y = document.createElement('div');
+                y.className = 'cloud_panel'+i;
+                x.appendChild(y);
+            }
+         }
+         
+         if(Math.random()>0.25){
+            for (var i = 4; i<7; i++){
+                y = document.createElement('div');
+                y.className = 'cloud_panel'+i;
+                x.appendChild(y);
+            }
+         }
+
+         document.body.appendChild(x);
+         start = (x, v) => setInterval(()=>{
+            x.style.zIndex = Math.floor(getTop(Number(x.style.top.substr(0, x.style.top.length-2)) + 0.34));
+            x.style.top = getTop(Number(x.style.top.substr(0, x.style.top.length-2)) + v*0.34) + 'px';
+            x.style.left = getLeft(Number(x.style.left.substr(0, x.style.left.length-2)) - v*0.94) + 'px';
+         }, 10);
+         
+         start(x, 1.5 + Math.random());
+
+         }
+
+         for(var i=0; i<15; i++) createCloud();
+
+         let plane = document.getElementsByClassName("plane")[0];
+         let left = document.getElementById('left');
+         let right = document.getElementById('right');
+         let wind_left = [];
+         let wind_right = [];
+         let lefts = [];
+         let rights = [];
+         for(var i=0; i<10; i++){
+            wind_left.push([0, 0, 0]);
+            wind_right.push([0, 0, 0]);
+            var x = document.createElement('div');
+            x.className = 'wind';
+            x.id = 'wind_left' + i;
+            x.style.opacity = (10-i)/10;
+            x.style.top = left.offsetTop;
+            x.style.left = left.offsetLeft;
+            document.body.appendChild(x);
+            lefts.push(x);
+            x = document.createElement('div');
+            x.className = 'wind';
+            x.id = 'wind_right' + i;
+            x.style.opacity = ((10-i)/10) + '';
+            x.style.top = right.offsetTop;
+            x.style.left = right.offsetLeft;
+            document.body.appendChild(x);
+            rights.push(x);
+         }
+
+         x = 0;
+         prev = 0;
+         noise = 0;
+         t = 0.005;
+
+
+         setInterval(
+             () => {
+                n = Math.sin(x * Math.cos(Math.PI/9) + Math.sin(x) * Math.sin(Math.PI/9)) * Math.cos(Math.PI/9) + noise;
+                plane.style.marginTop = (50*n) + "px";
+                plane.style.zIndex = Math.floor(plane.offsetTop + 50*n) + 40;
+
+                noise = t * (Math.random()-0.5)/10 + (1-t)*noise;
+
+                angle = Math.atan((n-prev)/0.03)*180/Math.PI;
+                // angle = 100*x;
+                plane.style.transform = 'rotate('+angle+'deg)';
+                
+                for(var i=0; i<10; i++){
+                  wind_left[i] = [wind_left[i][0] + 0.34, wind_left[i][1]  - 0.94, wind_left[i][2]];
+                  wind_right[i] = [wind_right[i][0] + 0.34, wind_right[i][1]  - 0.94, wind_right[i][2]];
+                }
+
+                for(var i=0; i<10; i++){
+                  var y = lefts[i];
+                  y.style.top = wind_left[i][0];
+                  y.style.left = wind_left[i][1];
+                  y.style.zIndex = wind_left[i][2];
+                  y = rights[i];
+                  y.style.top = wind_right[i][0];
+                  y.style.left = wind_right[i][1];
+                  y.style.zIndex = wind_right[i][2];
+                }
+
+                x += 0.01
+                prev = n;
+             }, 10
+         )
+
+
+         setInterval(() => {
+                for(var i=9; i>=0; i--){
+                  wind_left[i+1] = [wind_left[i][0], wind_left[i][1], wind_left[i][2]];
+                  wind_right[i+1] = [wind_right[i][0], wind_right[i][1], wind_right[i][2]];
+                }
+
+                l = left.getBoundingClientRect();
+                r = right.getBoundingClientRect();
+                wind_left[0] = [l.top, l.left, plane.style.zIndex];
+                wind_right[0] = [r.top, r.left, plane.style.zIndex];
+
+         }, 300)
+
+         document.getElementsByTagName('audio')[0].volume = 0.3;
+         function unmute() {
+           for(let elem of document.getElementsByTagName("audio")) {
+             elem.play();
+           }
+           let m = document.getElementById("mtbtn");
+           m.innerText = "MUTE";
+           m.onclick = mute;
+         }
+
+         function mute() {
+           for(let elem of document.getElementsByTagName("audio")) {
+             elem.pause();
+           }
+           let m = document.getElementById("mtbtn");
+           m.innerText = "UNMUTE";
+           m.onclick = unmute;
+         }
+      </script>
+   </body>
+</html>
