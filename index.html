@@ -9,8 +9,6 @@
                 font-family: "VT323", monospace;
                 padding: 0px;
                 margin: 0px;
-                height: 100%;
-                width: 100%;
             }
             .cloud {
                 position: absolute;
@@ -420,16 +418,18 @@
     </head>
     <body>
         <font id="mtbtn" size="17" style="margin-left: 20px; cursor: pointer;" onclick="unmute()" color="white">UNMUTE</font><br />
-        <font id="fsbtn" size="17" style="margin-left: 20px; cursor: pointer;" onclick="document.documentElement.requestFullscreen();" color="white">FULLSCREEN</font>
+        <font id="fsbtn" size="17" style="margin-left: 20px; cursor: pointer;" onclick="document.documentElement.requestFullscreen();" color="white">FULLSCREEN</font><br />
+
+        <iframe style="display: none;" id="player" width="10" height="10" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
         <audio controls loop style="display: none;">
             <source src="engine.mp3" type="audio/mp3" />
             Your browser does not support the audio element.
         </audio>
 
-        <audio controls loop style="display: none;">
-            <source src="japan_sinks.mp3" type="audio/mp3" />
-        </audio>
+        <!-- <audio controls loop style="display: none;">
+      <source src="japan_sinks.mp3" type="audio/mp3">
+    </audio> -->
 
         <div class="plane">
             <div class="prop"></div>
@@ -619,8 +619,10 @@
                 wind_right[0] = [r.top, r.left, plane.style.zIndex];
             }, 300);
 
-            document.getElementsByTagName("audio")[0].volume = 0.3;
+            document.getElementsByTagName("audio")[0].volume = 0.2;
             function unmute() {
+                document.getElementById("player").src = "https://www.youtube.com/embed/DWcJFNfaw9c?autoplay=1";
+
                 for (let elem of document.getElementsByTagName("audio")) {
                     elem.play();
                 }
@@ -630,6 +632,8 @@
             }
 
             function mute() {
+                document.getElementById("player").src = "";
+
                 for (let elem of document.getElementsByTagName("audio")) {
                     elem.pause();
                 }
